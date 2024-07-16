@@ -23,6 +23,7 @@
             max-width: 80%;
             margin: 0 auto;
             background-color: white;
+            border-radius: 10px;
         }
 
         .img-all-details {
@@ -93,8 +94,8 @@
             margin-right: 10px;
         }
 
-        .quantity-details .btn-quantity,
-        .quantity-details .btn-quantitys {
+        .quantity-details .btn-minus,
+        .quantity-details .btn-plus {
             border: 1px solid #ccc;
             background-color: #fff;
             width: 30px;
@@ -107,8 +108,8 @@
             transition: background-color 0.3s;
         }
 
-        .quantity-details .btn-quantity:hover,
-        .quantity-details .btn-quantitys:hover {
+        .quantity-details .btn-minus:hover,
+        .quantity-details .btn-plus:hover {
             background-color: #f7f7f7;
         }
 
@@ -191,9 +192,9 @@
                 <div class="title-quantity-details">
                     Số Lượng
                 </div>
-                <div class="btn-quantity">-</div>
+                <div class="btn-minus" onclick="minus()">-</div>
                 <div class="number-quatity-details">0</div>
-                <div class="btn-quantitys">+</div>
+                <div class="btn-plus" onclick="plus()">+</div>
             </div>
             <div class="btn-details">
                 <div class="cart-details">Thêm Vào Giỏ Hàng</div>
@@ -201,6 +202,22 @@
             </div>
         </div>
     </div>
+    <script>
+        var so = document.querySelector('.number-quatity-details');
+        var index = 0;
+        function plus(){
+            index++
+            so.innerHTML = index;
+        }
+
+        function minus(){
+            
+            if(index>0){
+                index--
+                so.innerHTML = index
+            }
+        }
+    </script>
 </body>
 
 </html>

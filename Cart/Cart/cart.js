@@ -29,13 +29,17 @@ function renderCartProducts() {
             <td class="c1-r2">Sản Phẩm</td>
             <td class="c1-r3">Đơn Giá</td>
             <td class="c1-r4">Số Lượng</td>
-            <td class="c1-r5">Số Tiền</td>
+            <td class="c1-r5">Tạm Tính</td>
             <td class="c1-r6">Thao Tác</td>
         </tr>`;
     cartTable.innerHTML += headerRow;
 
     // Product rows
     dataProduct.forEach(product => {
+        console.log(product.id)
+        const tamtinh = (product.price * product.quantity).toFixed(2);
+        const tamtinh_html = document.querySelector('#totalPrice');
+        tamtinh_html.innerHTML = tamtinh
         const productRow = `
             <tr class="column-2">
                 <td class="c2:r1">
@@ -51,15 +55,15 @@ function renderCartProducts() {
                     <p class="cost">$${product.price.toFixed(2)}</p>
                 </td>
                 <td class="c2-r4">
-                    <button onclick="decrementValue(${product.id})" class="decrement">-</button>
-                    <input type="text" id="number-${product.id}" value="${product.quantity}">
-                    <button onclick="incrementValue(${product.id})" class="increment">+</button>
+                    <button style="text-align: center ; width: 15%; " onclick="decrementValue(${product.id})" class="decrement">-</button>
+                    <input style="text-align: center ; width: 30%; " type="text" id="number-${product.id}" value="${product.quantity}">
+                    <button style="text-align: center ; width: 15%; " onclick="incrementValue(${product.id})" class="increment">+</button>
                 </td>
                 <td class="c2-r5">
-                    <p class="money">$${(product.price * product.quantity).toFixed(2)}</p>
+                    <p class="money">$${tamtinh}</p>
                 </td>
                 <td class="c2-r6">
-                    <a href="#" onclick="removeProduct(${product.id})">Xóa</a>
+                    <a href="#" onclick="removeProduct(${product.id})"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>`;
         cartTable.innerHTML += productRow;
@@ -83,7 +87,7 @@ function decrementValue(id) {
     const product = dataProduct.find(p => p.id === id);
     if (product && product.quantity > 1) {
         product.quantity -= 1;
-        renderCartProducts();
+        renderCartProducts();``
     }
 }
 

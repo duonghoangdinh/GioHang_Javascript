@@ -13,7 +13,7 @@
 
 <body>
     <div id="wrapper">
-        <div id="header">
+        <!-- <div id="header">
             <script>
                 window.addEventListener('scroll', function () {
                     var topHeader = document.querySelector('.top-header');
@@ -137,7 +137,7 @@
                     <li class="menu1"><a href="">CHÍNH SÁCH ĐỔI TRẢ</a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
         <!-- mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm -->
         <div id="content">
             <div class="title-main">
@@ -160,42 +160,52 @@
                     </div>
                 </div> -->
             </div>
-            <div class="outstanding">
+            <!-- <div class="outstanding">
                 <i class="fa-solid fa-bullhorn"></i>
-                Shop Rubik PKN đang có chương trình giảm giá ưu đãi. <li> bấm vào đây </li> để xem chi tiết
+                <div class="text-cart-out">
+                    Shop Rubik PKN đang có chương trình giảm giá ưu đãi <li> bấm vào đây để xem </li> 
+                </div>       
                 <div class="title-left-cart">
                     <div class="search-cart">
-                        <input type="text" placeholder="Bạn đang tìm gì....">
-                        <!-- <div class="search-button">
-                            <button>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </div> -->
+                        <div class="input-container">
+                            <input type="text" placeholder="Bạn đang tìm gì....">
+                            <a href="" class="img-search-cart"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
                     </div>
+                </div>       
+            </div> -->
+            <div class="outstanding">
+                <i class="fa-solid fa-bullhorn"></i>
+                <div class="text-cart-out">
+                    Shop Rubik PKN đang có chương trình giảm giá ưu đãi 
+                    <li>bấm vào đây để xem</li> 
+                </div>  
+                <div class="title-left-cart">
                     <div class="search-cart">
-                        <a href="" class="img-search-cart"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <div class="input-container">
+                            <input type="text" id="searchInput" placeholder="Bạn đang tìm gì...." oninput="searchProducts()">
+                            <a href="#" class="img-search-cart"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="cart">
                 <div class="cart-products">
                     <div class="cart-product"></div>
                 </div>
-                
                 <div class="cart-address">
                     <div class="title-address">
-                            CỘNG GIỎ HÀNG
+                        TỔNG GIỎ HÀNG
                     </div>
                     <hr>
                     <div class="product-name-cart">
                         <div class="tamTinh-cart-product">
                             <div class="tamtinh-cart">Tạm tính</div>
-                            <p class="money" id="totalPrice">$0.00</p>
+                            <p class="money" id="totalPrice">0.00đ</p>
                         </div>
                         <div class="sum-cart-product">
                             <div class="sum-cart">Tổng</div>
-                            <p class="money">$0.00</p>
+                            <p class="money" id="totalSum">0.00đ</p>
                         </div>  
                         <div class="btn-cart-product">
                             <div class="btn-cart">
@@ -208,14 +218,17 @@
                         </div>    
                         <div class="code-prefer-cart-product">
                             <input type="text" value="Mã ưu đãi">
-                        </div> 
+                        </div>
                         <div class="apply-cart-product">
                             <div class="apply-cart">
                                 ÁP DỤNG
                             </div>
-                        </div>             
+                        </div>            
                     </div>
                 </div>
+                
+                     
+                
             </div>
             <div class="cart-summary">
                 <!-- tong ket gio hang -->
